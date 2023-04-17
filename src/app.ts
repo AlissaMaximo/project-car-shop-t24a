@@ -1,5 +1,5 @@
 import express from 'express';
-import AutomobileRouter from './Routes/AutomobileRoutes';
+import AutomobileRouter from './Routes/AutomobileRouter';
 
 const app = express();
 

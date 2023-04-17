@@ -5,7 +5,7 @@ const AutomobileRouter = Router();
 
 AutomobileRouter.post(
   '/cars',
-  (req, res, next) => new CarController().createCar(req, res, next),
+  (req, res, next) => new CarController(req, res, next).createCar(),
 );
 
 export default AutomobileRouter;

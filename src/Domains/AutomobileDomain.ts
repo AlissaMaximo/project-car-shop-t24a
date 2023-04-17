@@ -5,7 +5,7 @@ export default abstract class AutomobileDomain {
   protected model: string;
   protected year: number;
   protected color: string;
-  protected status: boolean | undefined;
+  protected status?: boolean | undefined;
   protected buyValue: number;
 
   constructor(automobile: IAutomobile) {
