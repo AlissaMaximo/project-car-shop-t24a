@@ -1,4 +1,4 @@
-import CarDomain from '../Domains/CarDomain';
+import CarDomain from '../Domains/Car';
 import ICar from '../Interfaces/ICar';
 import CarModel from '../Models/CarODM';
 
