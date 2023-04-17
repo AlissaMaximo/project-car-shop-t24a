@@ -6,14 +6,7 @@ export default class Car extends AutomobileDomain {
   private seatsQty: number;
 
   constructor(car: ICar) {
-    super({
-      id: car.id,
-      model: car.model,
-      year: car.year,
-      color: car.color,
-      buyValue: car.buyValue,
-      status: car.status || false,
-    });
+    super(car);
     this.doorsQty = car.doorsQty;
     this.seatsQty = car.seatsQty;
   }

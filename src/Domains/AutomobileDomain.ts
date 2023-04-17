@@ -8,20 +8,13 @@ export default abstract class AutomobileDomain {
   protected status: boolean | undefined;
   protected buyValue: number;
 
-  constructor({
-    id,
-    model,
-    year,
-    color,
-    buyValue,
-    status,
-  }: IAutomobile) {
-    this.id = id;
-    this.model = model;
-    this.year = year;
-    this.color = color;
-    this.buyValue = buyValue;
-    this.status = status;
+  constructor(automobile: IAutomobile) {
+    this.id = automobile.id;
+    this.model = automobile.model;
+    this.year = automobile.year;
+    this.color = automobile.color;
+    this.buyValue = automobile.buyValue;
+    this.status = automobile.status;
   }
 
   public setID(id: string): void {
