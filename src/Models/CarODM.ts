@@ -1,8 +1,8 @@
 import { Schema } from 'mongoose';
-import ODM from './AutomobileODM';
+import AutomobileODM from './AutomobileODM';
 import ICar from '../Interfaces/ICar';
 
-export default class CarODM extends ODM<ICar> {
+export default class CarODM extends AutomobileODM<ICar> {
   constructor() {
     const schema = new Schema<ICar>({
       model: { type: String, required: true },
@@ -13,6 +13,6 @@ export default class CarODM extends ODM<ICar> {
       doorsQty: { type: Number, required: true },
       seatsQty: { type: Number, required: true },
     });
-    super(schema, 'Cars');
+    super(schema, 'Car');
   }
 }
