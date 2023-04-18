@@ -7,7 +7,11 @@ export default class CarService {
 
   public async createCar(car: ICar) {
     const newCar = await this.carModel.create(car);
-    const createdNewCar = new Car(newCar);
-    return createdNewCar;
+    return new Car(newCar);
+  }
+
+  public async findAllCars() {
+    const allCars = await this.carModel.findAll();
+    return allCars.map((car) => new Car(car));
   }
 }
