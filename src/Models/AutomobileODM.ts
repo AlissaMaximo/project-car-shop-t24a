@@ -21,4 +21,9 @@ export default abstract class AutomobileODM<T> {
   public async findAll(): Promise<T[]> {
     return this.model.find({});
   }
+
+  public async findById(id: string) : Promise<T | null> {
+    const result = await this.model.findById(id);
+    return result;
+  }
 }

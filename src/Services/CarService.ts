@@ -3,15 +3,21 @@ import ICar from '../Interfaces/ICar';
 import CarModel from '../Models/CarODM';
 
 export default class CarService {
-  private carModel: CarModel = new CarModel();
+  private model: CarModel = new CarModel();
 
-  public async createCar(car: ICar) {
-    const newCar = await this.carModel.create(car);
+  public async create(car: ICar) {
+    const newCar = await this.model.create(car);
     return new Car(newCar);
   }
 
-  public async findAllCars() {
-    const allCars = await this.carModel.findAll();
+  public async findAll() {
+    const allCars = await this.model.findAll();
     return allCars.map((car) => new Car(car));
+  }
+
+  public async findById(id: string) {
+    const car = await this.model.findById(id);
+    if (car) return new Car(car);
+    return null;
   }
 }
