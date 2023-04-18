@@ -5,7 +5,7 @@ import {
   models,
 } from 'mongoose';
 
-export default abstract class AutomobileODM<T> {
+export default abstract class AbstractODM<T> {
   private schema: Schema;
   private model: Model<T>;
 

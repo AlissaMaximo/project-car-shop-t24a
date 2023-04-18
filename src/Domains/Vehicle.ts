@@ -1,6 +1,6 @@
-import IAutomobile from '../Interfaces/IAutomobile';
+import IVehicle from '../Interfaces/IVehicle';
 
-export default abstract class AutomobileDomain {
+export default abstract class Vehicle {
   protected id: string | undefined;
   protected model: string;
   protected year: number;
@@ -8,7 +8,7 @@ export default abstract class AutomobileDomain {
   protected status?: boolean | undefined;
   protected buyValue: number;
 
-  constructor(automobile: IAutomobile) {
+  constructor(automobile: IVehicle) {
     this.id = automobile.id;
     this.model = automobile.model;
     this.year = automobile.year;
