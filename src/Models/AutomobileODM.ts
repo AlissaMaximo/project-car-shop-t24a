@@ -26,4 +26,8 @@ export default abstract class AutomobileODM<T> {
     const result = await this.model.findById(id);
     return result;
   }
+
+  public async updateOne(id: string, newData: Partial<T>): Promise<T | null> {
+    return this.model.findOneAndUpdate({ _id: id }, newData, { new: true });
+  }
 }

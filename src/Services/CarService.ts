@@ -7,6 +7,7 @@ export default class CarService {
 
   public async create(car: ICar) {
     const newCar = await this.model.create(car);
+    
     return new Car(newCar);
   }
 
@@ -17,7 +18,17 @@ export default class CarService {
 
   public async findById(id: string) {
     const car = await this.model.findById(id);
+
     if (car) return new Car(car);
+
+    return null;
+  }
+
+  public async updateOne(id: string, newData: ICar) {
+    const result = await this.model.updateOne(id, newData);
+
+    if (result) return new Car(result);
+
     return null;
   }
 }

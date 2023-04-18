@@ -11,6 +11,13 @@ AutomobileRouter.get(
   '/cars',
   (req, res, next) => new CarController(req, res, next).findAll(),
 );
-AutomobileRouter.get('/cars/:id', (req, res, next) => new CarController(req, res, next).findById());
+AutomobileRouter.get(
+  '/cars/:id',
+  (req, res, next) => new CarController(req, res, next).findById(),
+);
+AutomobileRouter.put(
+  '/cars/:id',
+  (req, res, next) => new CarController(req, res, next).updateOne(),
+);
 
 export default AutomobileRouter;
