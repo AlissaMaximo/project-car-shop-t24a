@@ -26,7 +26,7 @@ export default class CarService {
 
   public async updateOne(id: string, newData: ICar) {
     const result = await this.model.updateOne(id, newData);
-
+    
     if (result) return new Car(result);
 
     return null;
